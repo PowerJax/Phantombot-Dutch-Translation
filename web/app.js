@@ -147,7 +147,7 @@ function handleCurrentVolume(d) {
 function displaySongList() {
     console.log("displaySongList()");
     var div = document.getElementById("songlist");
-    div.innerHTML = "Adding Songlist<br><table border='0'>" +
+    div.innerHTML = "Muzieklijst toevoegen<br><table border='0'>" +
                     "  <tr>" +
                     "    <td>Link</td>" +
                     "  </tr>";
