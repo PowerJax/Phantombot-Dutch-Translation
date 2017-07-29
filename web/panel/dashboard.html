@@ -36,8 +36,8 @@
         <br>
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="streamTitle">Stream Title</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setStreamTitle()">Update</button>
+                <label for="streamTitle">Stream titel</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setStreamTitle()">Bijwerken</button>
                 <input type="text" class="form-control" id="streamTitleInput" placeholder="Stream Title" />
             </div>
         </form>
@@ -45,33 +45,33 @@
         
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gameTitle">Game Title</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setGameTitle()">Update</button>
+                <label for="gameTitle">spel Titel</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setGameTitle()">Bijwerken</button>
                 <input type="text" class="form-control" id="gameTitleInput" placeholder="Game Title" />
             </div>
         </form>
 
         <button type="button" class="btn btn-alert inline pull-left" onclick="$.disconnect()" 
-        data-toggle="tooltip" title="NOTE: This will remove the bot from your channel, you will have to manually rejoin it.">Remove</button>
+        data-toggle="tooltip" title="AANTEKENING: Als je hierop klikt verlaat de bot de chat, je zult zelf handmatig weer moeten joinen.">Verlaten</button>
 
         <button type="button" class="btn btn-warning inline pull-left" onclick="$.chatReconnect()" 
-        data-toggle="tooltip" title="Reconnect PhantomBot to your Twitch channel. This does not reconnect if the 'Remove' action was performed.">Reconnect</button>
+        data-toggle="tooltip" title="Phantombot opnieuw verbinden met je Twitch kanaal. Dit verbind niet opnieuw als de 'verlaten' actie is uitgevoerd.">Reconnect</button>
 
-        <button type="button" class="btn btn-primary inline pull-left" onclick="$.toggleTwitchChat()">Toggle Chat</button>
+        <button type="button" class="btn btn-primary inline pull-left" onclick="$.toggleTwitchChat()">Chat aan/uit</button>
     </div>
 
-    <h3>Chat Configuration and Statistics</h3>
+    <h3>Chat instellingen and statistieken</h3>
     <div>
         <div>
-            <strong>Chat Configuration Toggles</strong><br><br>
-            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('pausecommands')">Command Pause</button>
-            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('togglewhispermode')">Whisper Mode</button>
-            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('toggleme')">Action (/me) Mode</button>
-            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('mute')">Mute Mode</button>
+            <strong>Chat instellingen (aan/uit)</strong><br><br>
+            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('pausecommands')">bevel Pauze</button>
+            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('togglewhispermode')">fluister modus</button>
+            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('toggleme')">(/me) modus</button>
+            <button type="button" class="btn btn-primary inline" onclick="$.toggleCommand('mute')">Gedempte modus</button>
         </div>
         <br>
 
-        <div><strong>Chat Statistics</strong><br><br></div>
+        <div><strong>Chat statistieken</strong><br><br></div>
         <div id="panelStatsEnabled" />
         <table>
             <tr style="background-color: transparent">
@@ -103,11 +103,11 @@
         </table>
     </div>
 
-    <h3>Logging Configuration</h3>
+    <h3>Logging instellingen</h3>
     <div>
         <table>
             <tr class="textList">
-                <td>Event logging</td>
+                <td>Incident logging</td>
                 <td style="width: 25px"><div id="logEvent" /></td>
                 <td style="width: 25px">
                     <div data-toggle="tooltip" title="Toggle" class="button"
@@ -128,7 +128,7 @@
                     </td>
                 </tr>
                 <tr class="textList">
-                    <td>File & chat logging</td>
+                    <td>Bestand & chat logging</td>
                     <td style="width: 25px"><div id="logFile" /></td>
                     <td style="width: 25px">
                         <div data-toggle="tooltip" title="Toggle" class="button"
@@ -141,10 +141,10 @@
         <br>
         <form role="form">
              <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="logRotate">Number of Days to Keep Logs</label>
-                <button type="button" class="btn btn-primary pull-right" onclick="$.setLogRotate()">Submit</button>
+                <label for="logRotate">Het aantal dagen dat je logs wilt bewaren.</label>
+                <button type="button" class="btn btn-primary pull-right" onclick="$.setLogRotate()">opslaan</button>
                 <input type="number" min="0" class="form-control" id="logRotateInput" placeholder="Days" 
-                       data-toggle="tooltip" title="Days to keep logs, 0 means do not delete logs."/>
+                       data-toggle="tooltip" title="Het aantal dagen dat logs bewaard worden, 0 betekend logs nooit verwijderen."/>
             </div>
         </form>
     </div>
@@ -157,40 +157,39 @@
     <h3>Discord Modules</h3>
 
     <div>
-        <i>These are modules for our discord integration. If you do not have your bot connected to discord the enable buttons will not work and the modules
-            may not show up.</i>
+        <i>Deze modules zijn voor de discord intergratie. als je de bot niet hebt verbonden met discord zal de aan knop voor de modules niet werken.</i>
         <div id="discordModulesList" style="height: 300px; overflow: auto;" />
     </div>
 
 
-    <h3>Highlights</h3>
+    <h3>Hoogtepunten</h3>
     <div>
         <div id="_highlightsPanelDisabled" />
         <div id="_highlightsPanel">
-            Make a note of an event in the broadcast to make creating highlights in Twitch easier later.
+            maak een notitie over een gebeurtenis in de livestream om het maken van Twitch hoogteputen makkelijker te maken.
             <br><br>
             <form role="form">
                  <div class="form-group" onkeypress="return event.keyCode != 13">
-                    <label for="highlight">Create Highlight</label>
-                    <button type="button" class="btn btn-primary pull-right" onclick="$.setHighlight()">Submit</button>
+                    <label for="highlight">Maak Hoogtepunt</label>
+                    <button type="button" class="btn btn-primary pull-right" onclick="$.setHighlight()">Opslaan</button>
                     <input type="text" class="form-control" id="highlightInput" placeholder="Game Highlight" />
                 </div>
             </form>
             <br>
             
-            <button type="button" class="btn btn-danger pull-right" onclick="$.clearHighlights()">Clear Highlights</button>
-            <strong>Current Highlights</strong><br>
+            <button type="button" class="btn btn-danger pull-right" onclick="$.clearHighlights()">Verwijder Hoogtepunten</button>
+            <strong>Huidige Hoogtepunten</strong><br>
             <span id="showHighlights" />
         </div>
     </div>
     
-    <h3>Death Counter</h3>
+    <h3>sterfgevallen teller</h3>
     <div>
         <div id="_deathCtrPanelDisabled" />
         <div id="_deathCtrPanel">
             <table>
                 <tr class="textList" style="vertical-align: middle">
-                    <td>Deaths: <span id="deathCounterValue">Fetching Game...</span></td>
+                    <td>sterfgevallen: <span id="deathCounterValue">Spel ophalen...</span></td>
                     <td style="width: 30px">
                         <button type="button" class="btn btn-primary" onclick="$.adjustDeathCounter('add')"><i class="fa fa-plus fa-1x" /></button>
                     </td>
@@ -209,52 +208,52 @@
     <div>
         <div id="_multiLinkPanelDisabled" />
         <div id="_multiLinkPanel">
-            Multi-Link provides a link to share multiple Twitch channels in one UI.
-            Great for races or other competititions. Provide a space delimited list of channels.
-            Set a timer to let chat know on a regular basis that the Multi-Link is on.
+            Multi-Link verzorgt een link om meerdere Twitch channels te bekijken in één UI.
+            handig voor races en andere competities. zorg ervoor dat er tussen de namen van de kanalen een spatie zit.
+            Stel een timer in die Chat op reguliere basis laat weten dat de multi-link aan staat.
             <br><br>
             <form role="form">
                  <div class="form-group" onkeypress="return event.keyCode != 13">
-                    <label for="multi-link">Multi-Link Channels</label>
-                    <button type="button" class="btn btn-primary pull-right" onclick="$.setMultiLink('#multiLinkInput', 'otherChannels')">Submit</button>
-                    <input type="text" class="form-control" id="multiLinkInput" placeholder="Channel-1 Channel-2"
-                           data-toggle="tooltip" title="Place channels that you want to be in the multi-link, separate them with a space. Do not include your channel in this." />
+                    <label for="multi-link">Multi-Link kanalen</label>
+                    <button type="button" class="btn btn-primary pull-right" onclick="$.setMultiLink('#multiLinkInput', 'otherChannels')">Opslaan</button>
+                    <input type="text" class="form-control" id="multiLinkInput" placeholder="kanaal-1 kanaal-2"
+                           data-toggle="tooltip" title="Plaats kanalen waarvan je wilt dat ze in de multi-link zitten, scheid de kanaal namen van elkaar met een spatie. Vul hier niet je eigen kanaal naam in." />
                 </div>
             </form>
     
             <form role="form">
                  <div class="form-group" onkeypress="return event.keyCode != 13">
                     <label for="multi-link">Timer Interval</label>
-                    <button type="button" class="btn btn-primary pull-right" onclick="$.setMultiLinkTimer('#multiLinkTimerInput', 'timerInterval')">Submit</button>
+                    <button type="button" class="btn btn-primary pull-right" onclick="$.setMultiLinkTimer('#multiLinkTimerInput', 'timerInterval')">Opslaan</button>
                     <input type="text" class="form-control" id="multiLinkTimerInput" placeholder="Interval"
-                        data-toggle="tooltip" title="Set the interval (in minutes) for the multi-link to be said in chat. Minimum is 5 minutes." />
+                        data-toggle="tooltip" title="Stel in hoevaak de multi-link vermeld word in chat (in minuten). Minimum is 5 minuten." />
                 </div>
             </form>
     
             <form role="form">
                  <div class="form-group" onkeypress="return event.keyCode != 13">
-                    <label for="multi-link">Required Messages</label>
+                    <label for="multi-link">Verplicht aantal berichten</label>
                     <button type="button" class="btn btn-primary pull-right" onclick="$.setMultiReqMsgs('#multiLinkReqMsgsInput', 'reqMessages')">Submit</button>
                     <input type="text" class="form-control" id="multiLinkReqMsgsInput" placeholder="Amount" 
-                        data-toggle="tooltip" title="Set the amount of messages required before sending the multi-link." />
+                        data-toggle="tooltip" title="Hoeveel berichten verplicht zijn voordat de multi-link verstuurd word." />
                 </div>
             </form>
     
-            <button type="button" class="btn btn-success" onclick="$.multiLinkTimerOn()">Multi-Link Timer On</button>
-            <button type="button" class="btn btn-danger" onclick="$.multiLinkTimerOff()">Multi-Link Timer Off</button>
-            <button type="button" class="btn btn-danger" onclick="$.clearMultiLink()">Clear Multi-Link</button>
+            <button type="button" class="btn btn-success" onclick="$.multiLinkTimerOn()">Multi-Link Timer aan</button>
+            <button type="button" class="btn btn-danger" onclick="$.multiLinkTimerOff()">Multi-Link Timer uit</button>
+            <button type="button" class="btn btn-danger" onclick="$.clearMultiLink()">Reset Multi-Link</button>
         </div>
     </div>
 
-    <h3>Shoutout a Streamer</h3>
+    <h3>Shoutout een Streamer</h3>
     <div>
         <div id="_shoutoutPanelDisabled" />
         <div id="_shoutoutPanel">
-            Shoutout a streamer!  Will display their Twitch URL in chat along with game being played, or last played.<br><br>
+            Shoutout een streamer!  plaatst hun Twitch URL in chat samen met het spel die ze aan het spelen zijn, of voor het laatst gespeeld heeft.<br><br>
             <form role="form">
                  <div class="form-group" onkeypress="return event.keyCode != 13">
-                    <label for="shoutOut">Twitch Channel to Shoutout</label>
-                    <button type="button" class="btn btn-primary pull-right" onclick="$.shoutOut()">Submit</button>
+                    <label for="shoutOut">Twitch kanaal dat geshoutout moet worden</label>
+                    <button type="button" class="btn btn-primary pull-right" onclick="$.shoutOut()">versturen</button>
                     <input type="text" class="form-control" id="shoutOutInput" placeholder="Twitch Channel" />
                 </div>
             </form>

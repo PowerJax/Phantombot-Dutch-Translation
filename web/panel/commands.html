@@ -22,64 +22,64 @@
 
 <!-- Accordion object.  Each section is separated by an <h3 /> header and the content is to be enclosed in <div />.  -->
 <div id="customCommandsAccordion">
-    <h3>Commands</h3>
+    <h3>Bevelen</h3>
     <div>
         <div id="_editCustomCommandsPanelDisabled" />
     <div id="_editCustomCommandsPanel">
 
-        <div id="tagHelpDialog" title="Custom Command Tags" style="font-size: 90%">
+        <div id="tagHelpDialog" title="speciale bevelen Tags" style="font-size: 90%">
             <table>
                 <tr>
-                    <td>(sender) </td><td> User who triggered the command.<td>
+                    <td>(sender) </td><td> Persoon die het bevel heeft getriggerd.<td>
                     </tr><tr>
-                    <td>(@sender) </td><td> User who triggered the command and adds a @ symbol to his name.<td>
+                    <td>(@sender) </td><td> Persoon die het bevel heeft getriggerd en voegt een @ symbool toe aan zijn naam.<td>
                     </tr><tr>
-                    <td>(baresender) </td><td> User who triggered the command in lower case.<td>
+                    <td>(baresender) </td><td> Persoon die de het bevel heeft getriggerd in kleine letters.<td>
                     </tr><tr>
-                    <td>(touser) </td><td> Replaces with the argument you say after the command. If nothing is said after its the user who triggered the command.<td>
+                    <td>(touser) </td><td> Wordt vervangen met het argument dat na het bevel gezegt word. Als er niks gezegt wordt na het bevel is het de naam van de persoon die het bevel heeft getriggerd.<td>
                     </tr><tr>
-                    <td>(#) </td><td> Random number<td>
+                    <td>(#) </td><td> willekeurig getal<td>
                     </tr><tr>
-                    <td>(1), (2), (3) etc </td><td> Command arguments.<td>
+                    <td>(1), (2), (3) etc </td><td> bevel argumenten.<td>
                     </tr><tr>
-                    <td>(age) </td><td> Tells you how long you have been on twitch for.<td>
+                    <td>(age) </td><td> Verteld je hoe oud je Twitch account is.<td>
                     </tr><tr>
-                    <td>(random) </td><td> Random person in chat.<td>
+                    <td>(random) </td><td> willekeurig persoon in de chat.<td>
                     </tr><tr>
-                    <td>(pointname) </td><td> Current point name.<td>
+                    <td>(pointname) </td><td> Huidige punten naam.<td>
                     </tr><tr>
-                    <td>(uptime) </td><td> Current stream uptime.<td>
+                    <td>(uptime) </td><td> Huidige tijd dat de stream online is.<td>
                     </tr><tr>
-                    <td>(game) </td><td> Current game set on twitch.<td>
+                    <td>(game) </td><td> Huidig spel dat is ingesteld op Twitch.<td>
                     </tr><tr>
-                    <td>(status) </td><td> Current title set on twitch.<td>
+                    <td>(status) </td><td> Huidige titel ingesteld op Twitch.<td>
                     </tr><tr>
-                    <td>(price) </td><td> Current command price.<td>
+                    <td>(price) </td><td> Huidige bevel prijs.<td>
                     </tr><tr>
-                    <td>(pay) </td><td> Payment of the command.<td>
+                    <td>(pay) </td><td> betaling van het bevel.<td>
                     </tr><tr>
-                    <td>(onlineonly) </td><td> Will make the command work when the stream is online.<td>
+                    <td>(onlineonly) </td><td> Zorgt ervoor dat het bevel alleen werkt als de stream online is.<td>
                     </tr><tr>
-                    <td>(offlineonly) </td><td> Will make the command work when the stream is offline.<td>
+                    <td>(offlineonly) </td><td> zorgt ervoor dat het bevel alleen werkt als de stream offonline is.<td>
                     </tr><tr>
-                    <td>(viewers) </td><td> Current viewer count.<td>
+                    <td>(viewers) </td><td> Het huidige aantal kijkers.<td>
                     </tr><tr>
-                    <td>(count) </td><td> Amount of time the command has been used.<td>
+                    <td>(count) </td><td> Hoevaak het bevel gebruikt is.<td>
                     </tr><tr>
-                    <td>(echo) </td><td> Will say any message as the bot.<td>
+                    <td>(echo) </td><td> zegt een bericht als de bot.<td>
                     </tr><tr>
                     <td>(1=) </td><td> Argument 1. Add a the tag name of your choice after the = for if the argument is empty.<td>
                     </tr><tr>
-                    <td>(countdown=) </td><td> Add the date you want to count down too. Ex (countdown=July 2 2016 7:00).<td>
+                    <td>(countdown=) </td><td> Voeg een datum toe waar je naar wilt aftellen. Voorbeeld (countdown=July 2 2016 7:00).<td>
                     </tr><tr>
-                    <td>(downtime) </td><td> Time since the last stream.<td>
+                    <td>(downtime) </td><td> Tijd sinds de laatste stream.<td>
                     </tr><tr>
-                    <td>(readfile filename.txt) </td><td> Reads what is in the file. The file must be in the bots addons folder.<td>
+                    <td>(readfile filename.txt) </td><td> Leest wat is in het bestand. Het bestand moet in de bots addon folder zitten.<td>
                     </tr><tr>
                     <td>(customapijson URL key | {literal string} ...) </td>
                     <td> Call a remote URL that returns JSON. key or object.key or object.object.key to access JSON data.
                     </tr><tr>
-                    <td>(command [command_name]) </td><td> Call a command. Must be first item in custom command. Do not include ! before command_name</td>
+                    <td>(command [command_name]) </td><td> roep een bevel op. Must be first item in custom command. Do not include ! before command_name</td>
                     </tr><tr>
                     <td>(customapi [requesturl]) </td><td> Call a remote URL<td>
                 </tr>
@@ -88,15 +88,15 @@
 
         <div>
             <button type="button" class="btn btn-primary btn-xs inline pull-right"
-                     onclick="$('#tagHelpDialog').dialog('open')"><small>Command variables</small></button>
+                     onclick="$('#tagHelpDialog').dialog('open')"><small>bevel variabelen</small></button>
             <br><br>
         </div>
     </div>
 
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="runCustomCommand">Run a command</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.runCustomCommand()">Run</button>
+                <label for="runCustomCommand">Voer een bevel uit.</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.runCustomCommand()">Uitvoeren</button>
                 <input type="text" class="form-control" id="commandImput" placeholder="Command name" />
             </div>
         </form>
@@ -104,25 +104,25 @@
 
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="addCustomCommand">Add a command</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.addCustomCommand()">Submit</button>
+                <label for="addCustomCommand">Voeg een bevel toe.</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.addCustomCommand()">Toevoegen</button>
                 <input type="text" class="form-control" id="addCommandCommand" placeholder="Command name" />
                 <input type="text" class="form-control" id="addCommandText" placeholder="Command response" />
             </div>
         </form>
-        <label for="addCustomCommand">Command list</label>
+        <label for="addCustomCommand">Bevelen lijst</label>
     <div id="_viewCustomCommandsPanelDisabled" />
     <div id="_viewCustomCommandsPanel">
         <div id="customCommandsList" style="height: 250px; overflow: auto;" />
     </div>
     </div>
 
-    <h3>Aliases</h3>
+    <h3>aliassen</h3>
     <div>
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="addCustomCommand">Add a alias</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.aliasCommand()">Submit</button>
+                <label for="addCustomCommand">Voeg een alias toe</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.aliasCommand()">Toevoegen</button>
                 <input type="text" class="form-control" id="aliasCommandInputAlias" placeholder="Default command name" />
                 <input type="text" class="form-control" id="aliasCommandInput" placeholder="Alias name" />
             </div>
@@ -133,50 +133,50 @@
     </div>
     </div>
 
-    <h3>Cost</h3>
+    <h3>Prijs</h3>
     <div>
     <div id="_commandPricesPanelDisabled" />
     <div id="_commandPricesPanel">
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="setCommandPrice">Add a new price</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setCommandPrice()">Submit</button>
+                <label for="setCommandPrice"> nieuwe prijs Toevoegen</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setCommandPrice()">Toevoegen</button>
                 <input type="text" class="form-control" id="setCommandPriceInputCommand" placeholder="Command name" />
                 <input type="text" class="form-control" id="setCommandPriceInput" placeholder="Price" />
             </div>
         </form>
 
-        <strong>Current Command Prices</strong><br><br>
+        <strong>Huidige bevelen prijzen</strong><br><br>
         <div id="priceCommandsList" style="height: 200px; overflow: auto;" />
     </div>
     </div>
 
-    <h3>Payment</h3>
+    <h3>betaling</h3>
     <div>
     <div id="_commandPayPanelDisabled" />
     <div id="_commandPayPanel">
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="setCommandPay">Add a new payment</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setCommandPay()">Submit</button>
+                <label for="setCommandPay">voeg een nieuwe betaling toe</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setCommandPay()">Toevoegen</button>
                 <input type="text" class="form-control" id="setCommandPayInputCommand" placeholder="Command name" />
                 <input type="text" class="form-control" id="setCommandPayInput" placeholder="Payment" />
             </div>
         </form>
 
-        <strong>Current Command Payments</strong><br><br>
+        <strong>Huidige bevelen betalingen</strong><br><br>
         <div id="payCommandsList" style="height: 200px; overflow: auto;" />
     </div>
     </div>
 
-    <h3>Permissions</h3>
+    <h3>machtigingen</h3>
     <div>
         <table>
             <tr class="textList">
-                <td>No permission warning message</td>
+                <td>Geen onvoldoende permissies waarschuwings bericht.</td>
                 <td style="width: 25px"><div id="permcomMsg" /></td>
                 <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
+                    <div data-toggle="tooltip" title="aan/uit" class="button"
                          onclick="$.togglePermcomMsg();"><i class="fa fa-refresh" />
                      </div>
                 </td>
@@ -197,16 +197,16 @@
                 <td>Mod cooldown</td>
                 <td style="width: 25px"><div id="toggleModCooldown" /></td>
                 <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
+                    <div data-toggle="tooltip" title="aan/uit" class="button"
                          onclick="$.toggleModCooldown();"><i class="fa fa-refresh" />
                      </div>
                 </td>
             </tr>
             <tr class="textList">
-                <td>Cooldown warning message</td>
+                <td>Cooldown waarschuwings bericht</td>
                 <td style="width: 25px"><div id="cooldownMsg" /></td>
                 <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
+                    <div data-toggle="tooltip" title="aan/uit" class="button"
                          onclick="$.toggleCooldownMsg();"><i class="fa fa-refresh" />
                      </div>
                 </td>
@@ -216,7 +216,7 @@
         <br>
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="defaultCooldownInput">Default Cooldown</label>
+                <label for="defaultCooldownInput">Standaard Cooldown</label>
                 <button type="button" class="btn btn-primary inline pull-right" onclick="$.setDefaultCooldown()">Submit</button>
                 <input type="number" min="0" class="form-control" id="defaultCooldownInput" placeholder="Seconds" data-toggle="tooltip" title="Default cooldown applied to all commands
                 that don't have a cooldown set."/>
@@ -226,22 +226,21 @@
         <br>
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="cooldownCmd">Command cooldown</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.addCooldown()">Submit</button>
+                <label for="cooldownCmd">Bevel cooldown</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.addCooldown()">Toevoegen</button>
                 <input type="text" class="form-control" id="cooldownCmdInputCommand" placeholder="Command name" />
                 <input type="number" min="0" class="form-control" id="cooldownCmdInput" placeholder="Seconds" />
             
             <div class="checkbox pull-right">
                 <label>
-                    <input type="checkbox" id="globalCooldownCheck" value="global" checked data-toggle="tooltip" title="When this is checked the cooldown will be applied to everyone
-                    in the channel, if it is not the cooldown will be applied on a per-user base.">Global
+                    <input type="checkbox" id="globalCooldownCheck" value="global" checked data-toggle="tooltip" title="Als dit aanstaat geldt de cooldown voor iedereen, als het niet aan staat geldt het per persoon.">Globaal
                 </label>
             </div>
             </div>
         </form>
 
         <br><br>
-        <strong>Commands with Cooldowns</strong>
+        <strong>bevelen met Cooldowns</strong>
         <div id="cooldownList" style="height: 200px; overflow: auto;" />
     </div>
 </div>
