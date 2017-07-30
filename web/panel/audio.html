@@ -60,7 +60,7 @@
             <div class="form-group" onkeypress="return event.keyCode != 13">
                 <label for="playlistName">Laad afspeellijst</label>
                 <button type="button" class="btn btn-primary inline pull-right" onclick="$.loadYtplaylist()">Laad</button>
-                <input type="text" class="form-control" id="playlistImput" placeholder="Playlist Name" />
+                <input type="text" class="form-control" id="playlistImput" placeholder="Afspeellijst Naam" />
             </div>
         </form>
 
@@ -69,7 +69,7 @@
                 <label for="ytpDJName">Stel afspeellijst DJ naam in</label>
                 <button type="button" class="btn btn-primary inline pull-right" 
                         onclick="$.setYouTubePlayerDJName()">Verzenden</button>
-                <input type="text" class="form-control" id="ytpDJNameInput" placeholder="DJ Name">
+                <input type="text" class="form-control" id="ytpDJNameInput" placeholder="DJ Naam">
             </div>
         </form>
 
@@ -78,7 +78,7 @@
                 <label for="ytpMaxRequests">Stel max parallelle verzoeken in</label>
                 <button type="button" class="btn btn-primary inline pull-right" 
                         onclick="$.setYouTubePlayerMaxReqs()">Verzenden</button>
-                <input type="number" min="1" class="form-control" id="ytpMaxReqsInput" placeholder="Request Count">
+                <input type="number" min="1" class="form-control" id="ytpMaxReqsInput" placeholder="Aantal verzoeken">
             </div>
         </form>
 
@@ -87,7 +87,7 @@
                 <label for="addKeyword">Maximale videolengte instellen (seconden)</label>
                 <button type="button" class="btn btn-primary inline pull-right" 
                         onclick="$.setYouTubePlayerMaxLength()">Verzenden</button>
-                <input type="number" min="1" class="form-control" id="ytpMaxLengthInput" placeholder="Request Count">
+                <input type="number" min="1" class="form-control" id="ytpMaxLengthInput" placeholder="Aantal verzoeken">
             </div>
         </form>
 
@@ -95,7 +95,7 @@
             <div class="form-group" onkeypress="return event.keyCode != 13">
                 <label for="blacklistedSongs">Een nummer op de zwarte lijst zetten</label>
                 <button type="button" class="btn btn-primary inline pull-right" onclick="$.blacklistSong()">Toevoegen</button>
-                <input type="text" class="form-control" id="songBlacklist" placeholder="Song Name or Keyword">
+                <input type="text" class="form-control" id="songBlacklist" placeholder="naam van nummer of trefwoord">
             </div>
             <div id="ytplayerBSong" style="height: 100px; overflow: auto;" />
             <br>
@@ -105,7 +105,7 @@
             <div class="form-group" onkeypress="return event.keyCode != 13">
                 <label for="blacklistedusers">Een gebruikersnaam op de zwarte lijst zetten</label>
                 <button type="button" class="btn btn-primary inline pull-right" onclick="$.blacklistUser()">Toevoegen</button>
-                <input type="text" class="form-control" id="userBlacklist" placeholder="Username">
+                <input type="text" class="form-control" id="userBlacklist" placeholder="Gebruikersnaam">
             </div>
             <div id="ytplayerBUser" style="height: 100px; overflow: auto;" />
         </form>

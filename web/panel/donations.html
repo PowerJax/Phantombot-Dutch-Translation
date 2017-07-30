@@ -22,40 +22,48 @@
 
 <!-- Accordion object.  Each section is separated by an <h3 /> header and the content is to be enclosed in <div />.  -->
 <div id="donationsAccordion">
-    <h3>Donations</h3>
+    <h3>Donaties</h3>
     <div>
-    <div id="_donationsPanelDisabled" />
-    <div id="_donationsPanel">
-        <div>
-            <strong>Donations Table</strong>
-            <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('amount_desc')">
+        <div id="_donationsPanelDisabled" />
+        <div id="_donationsPanel">
+            <div>
+                <strong>Donaties tabel</strong>
+                <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('amount_desc')">
                 <i class="fa fa-money" /><i class="fa fa-arrow-down" />
             </button>
-            <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('amount_asc')">
+                <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('amount_asc')">
                 <i class="fa fa-money" /><i class="fa fa-arrow-up" />
             </button>
 
-            <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('time_desc')">
+                <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('time_desc')">
                 <i class="fa fa-clock-o" /><i class="fa fa-arrow-down" />
             </button>
-            <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('time_asc')">
+                <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('time_asc')">
                 <i class="fa fa-clock-o" /><i class="fa fa-arrow-up" />
             </button>
 
-            <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('alpha_desc')">
+                <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('alpha_desc')">
                 <i class="fa fa-user" /><i class="fa fa-arrow-down" />
             </button>
-            <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('alpha_asc')">
+                <button type="button" class="btn btn-default inline pull-right btn-xs" onclick="$.setDonationSort('alpha_asc')">
                 <i class="fa fa-user" /><i class="fa fa-arrow-up" />
             </button>
-        </div>
-        <br>
+            </div>
+            <br>
 
-        <div id="donationsTable" style="height: 300px" />
-    </div>
+            <div id="donationsTable" style="height: 300px" />
+        </div>
     </div>
 </div>
 
 <!-- Run the Acordion -->
-<script>$("#donationsAccordion").accordion( { clearStyle: true, heightStyle: "panel", icons: null } );</script>
-<script>handleInputFocus();</script>
+<script>
+    $("#donationsAccordion").accordion({
+        clearStyle: true,
+        heightStyle: "panel",
+        icons: null
+    });
+</script>
+<script>
+    handleInputFocus();
+</script>

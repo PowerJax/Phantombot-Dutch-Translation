@@ -22,23 +22,23 @@
 
 <!-- Accordion object.  Each section is separated by an <h3 /> header and the content is to be enclosed in <div />.  -->
 <div id="cooldownAccordion">
-    <h3>Global Cooldown Settings</h3>
+    <h3>Globale Cooldown Settings</h3>
     <div style="height: 200px;">
         <table>
             <tr class="textList">
-                <td>Global Cooldown</td>
+                <td>Globale Cooldown</td>
                 <td style="width: 25px"><div id="toggleGlobalCooldown" /></td>
                 <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
+                    <div data-toggle="tooltip" title="aan/uit" class="button"
                          onclick="$.toggleGlobalCooldown();"><i class="fa fa-refresh" />
                      </div>
                 </td>
             </tr>
             <tr class="textList">
-                <td>Per-User Cooldown</td>
+                <td>Per persoon Cooldown</td>
                 <td style="width: 25px"><div id="togglePerUserCooldown" /></td>
                 <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
+                    <div data-toggle="tooltip" title="aan/uit" class="button"
                          onclick="$.togglePerUserCooldown();"><i class="fa fa-refresh" />
                      </div>
                 </td>
@@ -47,7 +47,7 @@
                 <td>Mod Cooldown</td>
                 <td style="width: 25px"><div id="toggleModCooldown" /></td>
                 <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
+                    <div data-toggle="tooltip" title="aan/uit" class="button"
                          onclick="$.toggleModCooldown();"><i class="fa fa-refresh" />
                      </div>
                 </td>
@@ -59,7 +59,7 @@
             <div class="form-group" onkeypress="return event.keyCode != 13">
                 <label for="globalCooldownTime">Global Cooldown Time</label>
                 <button type="button" class="btn btn-primary inline pull-right" onclick="$.setGlobalCooldownTime()">Submit</button>
-                <input type="number" min="0" class="form-control" id="globalCooldownTimeInput" placeholder="seconds" />
+                <input type="number" min="0" class="form-control" id="globalCooldownTimeInput" placeholder="seconden" />
             </div>
         </form>
     </div>
@@ -70,7 +70,7 @@
             <div class="form-group" onkeypress="return event.keyCode != 13">
                 <label for="cooldownCmd">Cooldown Command</label>
                 <button type="button" class="btn btn-primary inline pull-right" onclick="$.addCooldown()">Submit</button>
-                <input type="text" class="form-control" id="cooldownCmdInput" placeholder="command_name seconds" />
+                <input type="text" class="form-control" id="cooldownCmdInput" placeholder="command_naam seconden" />
             </div>
         </form>
 
