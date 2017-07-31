@@ -22,45 +22,53 @@
 
 <!-- Accordion object.  Each section is separated by an <h3 /> header and the content is to be enclosed in <div />.  -->
 <div id="keywordsAccordion">
-    <h3>Keywords</h3>
+    <h3>Trefwoorden</h3>
     <div>
-    <div id="_keywordsPanelDisabled" />
-    <div id="_keywordsPanel">
+        <div id="_keywordsPanelDisabled" />
+        <div id="_keywordsPanel">
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="addKeyword">Voeg trefwoord toe</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.addKeywordnew()">Bijwerken</button>
+                    <input type="text" class="form-control" id="addKeywordInput" placeholder="Een nieuw trefwoord">
+                    <input type="text" class="form-control" id="addKeywordResponseInput" placeholder="Antwoord">
+                </div>
+            </form>
+            <div id="keywordsList" style="height: 100px; overflow: auto;" />
+        </div>
+        <br>
+
         <form role="form">
             <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="addKeyword">Add Keyword</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.addKeywordnew()">Submit</button>
-                <input type="text" class="form-control" id="addKeywordInput" placeholder="A New Keyword">
-                <input type="text" class="form-control" id="addKeywordResponseInput" placeholder="Response">
+                <label for="cooldownKey">Trefwoord cooldown</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.addKeyCooldown()">Bijwerken</button>
+                <input type="text" class="form-control" id="cooldownKeyInputCommand" placeholder="Command naam" />
+                <input type="text" class="form-control" id="cooldownKeyInput" placeholder="Seconden" />
             </div>
         </form>
-        <div id="keywordsList" style="height: 100px; overflow: auto;" />
+        <div id="keywordsCooldownList" style="height: 100px; overflow: auto;" />
+        <br>
+
+        <form role="form">
+            <div class="form-group" onkeypress="return event.keyCode != 13">
+                <label for="cooldownKey">Trefwoord prijzen</label>
+                <button type="button" class="btn btn-primary inline pull-right" onclick="$.setKeyPrice()">Bijwerken</button>
+                <input type="text" class="form-control" id="priceKeyInputKey" placeholder="Command Naam" />
+                <input type="number" min="0" class="form-control" id="priceKeyInput" placeholder="Prijs" />
+            </div>
+        </form>
+        <div id="keywordsPriceList" style="height: 100px; overflow: auto;" />
     </div>
-    <br>
-
-    <form role="form">
-        <div class="form-group" onkeypress="return event.keyCode != 13">
-            <label for="cooldownKey">Keyword cooldown</label>
-            <button type="button" class="btn btn-primary inline pull-right" onclick="$.addKeyCooldown()">Submit</button>
-            <input type="text" class="form-control" id="cooldownKeyInputCommand" placeholder="Command name" />
-            <input type="text" class="form-control" id="cooldownKeyInput" placeholder="Seconds" />
-        </div>
-    </form>
-    <div id="keywordsCooldownList" style="height: 100px; overflow: auto;" />
-    <br>
-
-    <form role="form">
-        <div class="form-group" onkeypress="return event.keyCode != 13">
-            <label for="cooldownKey">Keyword prices</label>
-            <button type="button" class="btn btn-primary inline pull-right" onclick="$.setKeyPrice()">Submit</button>
-            <input type="text" class="form-control" id="priceKeyInputKey" placeholder="Command name" />
-            <input type="number" min="0" class="form-control" id="priceKeyInput" placeholder="amount" />
-        </div>
-    </form>
-    <div id="keywordsPriceList" style="height: 100px; overflow: auto;" />
-</div>
 </div>
 
 <!-- Run the Acordion -->
-<script>$("#keywordsAccordion").accordion( { clearStyle: true, heightStyle: "panel", icons: null } );</script>
-<script>handleInputFocus();</script>
+<script>
+    $("#keywordsAccordion").accordion({
+        clearStyle: true,
+        heightStyle: "panel",
+        icons: null
+    });
+</script>
+<script>
+    handleInputFocus();
+</script>

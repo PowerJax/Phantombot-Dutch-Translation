@@ -22,14 +22,14 @@
 
 <!-- Accordion object.  Each section is separated by an <h3 /> header and the content is to be enclosed in <div />.  -->
 <div id="helpAccordion">
-    <h3>Version</h3>
+    <h3>Versie</h3>
     <div>
         <div id="botVersion" />
     </div>
 
-    <h3>Support Sites</h3>
+    <h3>Help Sites</h3>
     <div>
-        <strong>Need support? Reach out to the PhantomBot team at the following locations.</strong><br><br>
+        <strong>Hulp nodig? Neem contact op met het PhantomBot team op de volgende locaties (Engels).</strong><br><br>
 
         <i class="fa fa-external-link" />
         <a target="_blank" href="https://community.phantombot.tv/">PhantomBot Community Forums</a><br>
@@ -38,21 +38,32 @@
         <a target="_blank" href="https://twitter.com/PhantomBotApp">Twitter</a><br>
 
         <br>
-        <strong>Looking for extra information?</strong><br><br>
+        <strong>Opzoek naar extra Informatie?</strong><br><br>
         <i class="fa fa-external-link" />
-        <a target="_blank" href="https://phantombot.tv/">PhantomBot Information</a><br>
-        
-        <i class="fa fa-external-link" />
-        <a target="_blank" href="https://phantombot.tv/commands/">PhantomBot Command List</a><br>
+        <a target="_blank" href="https://phantombot.tv/">PhantomBot Informatie (Engels)</a><br>
 
         <i class="fa fa-external-link" />
-        <a target="_blank" href="https://phantombot.tv/streamlabs/">Connect to StreamLabs</a><br>
+        <a target="_blank" href="https://github.com/powerjax/phantombot-dutch-translation">Nederlandse vertaling help</a><br>
 
         <i class="fa fa-external-link" />
-        <a target="_blank" href="https://phantombot.tv/gamewisp/">Connect to GameWisp</a><br>
+        <a target="_blank" href="https://phantombot.tv/commands/">PhantomBot Command Lijst</a><br>
+
+        <i class="fa fa-external-link" />
+        <a target="_blank" href="https://phantombot.tv/streamlabs/">Verbind met StreamLabs</a><br>
+
+        <i class="fa fa-external-link" />
+        <a target="_blank" href="https://phantombot.tv/gamewisp/">verbind met GameWisp</a><br>
     </div>
 </div>
 
 <!-- Run the Acordion -->
-<script>$("#helpAccordion").accordion( { clearStyle: true, heightStyle: "panel", icons: null } );</script>
-<script>handleInputFocus();</script>
+<script>
+    $("#helpAccordion").accordion({
+        clearStyle: true,
+        heightStyle: "panel",
+        icons: null
+    });
+</script>
+<script>
+    handleInputFocus();
+</script>

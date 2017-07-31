@@ -22,370 +22,352 @@
 
 <!-- Accordion object.  Each section is separated by an <h3 /> header and the content is to be enclosed in <div />.  -->
 <div id="gamesAccordion">
-    <h3>Betting</h3>
+    <h3>Bieden</h3>
     <div>
         <div id="_bettingPanelDisabled" />
         <div id="_bettingPanel">
 
-        <button type="button" class="btn btn-primary inline pull-right" data-toggle="modal" data-target="#betClose">Close</button>
-        <button type="button" class="btn btn-primary inline pull-right" data-toggle="modal" data-target="#betOpen">Open</button>
+            <button type="button" class="btn btn-primary inline pull-right" data-toggle="modal" data-target="#betClose">Sluit</button>
+            <button type="button" class="btn btn-primary inline pull-right" data-toggle="modal" data-target="#betOpen">Open</button>
 
-        <div id="betOpen" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background: rgb(28, 28, 36); border-radius: 3px;">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"></button>
-                    <h4 class="modal-title">Open a Bet</h4>
-                </div>
-
-                <div class="modal-body">
-                    <form role="form">
-                        <div class="form-group" onkeypress="return event.keyCode != 13">
-                            <label for="betTitle">Bet Title</label>
-                            <input type="text" class="form-control" id="betTitle" placeholder="Bet Title" data-toggle="tooltip" 
-                                title="Title that will be shown in chat once you open the bet." />
+            <div id="betOpen" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background: rgb(28, 28, 36); border-radius: 3px;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                            <h4 class="modal-title">Open een bod</h4>
                         </div>
-                    </form>
 
-                    <form role="form">
-                        <div class="form-group" onkeypress="return event.keyCode != 13">
-                            <label for="betOptions">Bet Options</label>
-                            <input type="text" class="form-control" id="betOptions" placeholder="Bet Options" data-toggle="tooltip" 
-                                title="Enter the bet options you want. Seperate them with a comma (,) and a space. 'option1, option2'." />
-                        </div>
-                    </form>
-
-                    <form role="form">
-                        <div class="form-group" onkeypress="return event.keyCode != 13">
-                            <label for="minBet">Minimum Bet</label>
-                            <input type="text" class="form-control" id="minBet" placeholder="Amount" data-toggle="tooltip" 
-                                title="Set the minimum amount of points people are allowed to bet on an option." />
-                        </div>
-                    </form>
-
-                    <form role="form">
-                        <div class="form-group" onkeypress="return event.keyCode != 13">
-                            <label for="maxBet">Maximum Bet</label>
-                            <input type="text" class="form-control" id="maxBet" placeholder="Amount" data-toggle="tooltip" 
-                                title="Set the maximum amount of points people are allowed to bet on an option. 0 Means infinite" />
-                        </div>
-                    </form>
-
-                    <label for="timer">Close Timer</label>
-                    <input id="bet-timer" style="width: 564px; margin-left: 1px;" type="range" min="0" max="120" value="0" step="1" 
-                        oninput="rangeUpdate(this.value, 'bet-timer2', 'Minutes')" />
-                    <span id="bet-timer2" style="margin-left: 1px;">Until closed</span>
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-toggle="modal" data-target="#settings"><i class="fa fa-cog"/></button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$.bet.open()">Open</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div id="betClose" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background: rgb(28, 28, 36); border-radius: 3px;">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"></button>
-                    <h4 class="modal-title">Close a Bet</h4>
-                </div>
-
-                <div class="modal-body">
-                    <input type="text" class="form-control" id="betCloseI" placeholder="Winning Option" data-toggle="tooltip" 
-                    title="Enter the winning option. This will close the bet completely." />
-                    <br>
-                    <input type="checkbox" id="tempclose" data-toggle="tooltip" onclick="$.toggleInput()" title="Stop bet entries and wait on the winning option."> Stop Entries
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$.bet.close()">Close</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div id="settings" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background: rgb(28, 28, 36); border-radius: 3px;">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"> </button>
-                    <h4 class="modal-title">Global Settings</h4>
-                </div>
-
-                <div class="modal-body">
-                    <table>
-                        <tr class="textList">
-                            <td>Save old Bets</td>
-                            <td style="width: 25px"><div id="toggleSaveBets" /></td>
-                            <td style="width: 25px">
-                                <div data-toggle="tooltip" title="Toggle" class="button"
-                                    onclick="$.toggleSaveBets();"><i class="fa fa-refresh" />
+                        <div class="modal-body">
+                            <form role="form">
+                                <div class="form-group" onkeypress="return event.keyCode != 13">
+                                    <label for="betTitle">Bod titel</label>
+                                    <input type="text" class="form-control" id="betTitle" placeholder="Bod titel" data-toggle="tooltip" title="Titel die word weergegeven in chat wanneer je de veiling opent." />
                                 </div>
-                            </td>
-                        </tr>
-                        <tr class="textList">
-                            <td>Warning Messages</td>
-                            <td style="width: 25px"><div id="toggleWarningMessages" /></td>
-                            <td style="width: 25px">
-                                <div data-toggle="tooltip" title="Toggle" class="button"
-                                    onclick="$.toggleWarningMessages();"><i class="fa fa-refresh" />
+                            </form>
+
+                            <form role="form">
+                                <div class="form-group" onkeypress="return event.keyCode != 13">
+                                    <label for="betOptions">Bod opties</label>
+                                    <input type="text" class="form-control" id="betOptions" placeholder="Bod opties" data-toggle="tooltip" title="Vul de opties in die je wilt. Scheid ze van elkaar met een comma (,) en een spatie. 'optie1, optie2'." />
                                 </div>
-                            </td>
-                        </tr>
-                    </table>
+                            </form>
 
-                    <br>
-                    <form role="form">
-                        <div class="form-group" onkeypress="return event.keyCode != 13">
-                            <label for="dateFormt">Date Format</label>
-                            <input type="text" class="form-control" id="dateFormat" placeholder="Date Format" data-toggle="tooltip" 
-                                title="Set the date format that old bets are saved in. Default is yyyy.mm.dd" />
+                            <form role="form">
+                                <div class="form-group" onkeypress="return event.keyCode != 13">
+                                    <label for="minBet">Minimum bod</label>
+                                    <input type="text" class="form-control" id="minBet" placeholder="Minimum bod" data-toggle="tooltip" title="Stel de minimum hoeveelheid punten in die kunnen worden ingezet." />
+                                </div>
+                            </form>
+
+                            <form role="form">
+                                <div class="form-group" onkeypress="return event.keyCode != 13">
+                                    <label for="maxBet">Maximum bod</label>
+                                    <input type="text" class="form-control" id="maxBet" placeholder="Maximum bod" data-toggle="tooltip" title="Stel de maximum hoeveelheid punten in die kunnen worden ingezet. 0 betekend onbegrensd." />
+                                </div>
+                            </form>
+
+                            <label for="timer">Sluitings timer</label>
+                            <input id="bet-timer" style="width: 564px; margin-left: 1px;" type="range" min="0" max="120" value="0" step="1" oninput="rangeUpdate(this.value, 'bet-timer2', 'Minutes')" />
+                            <span id="bet-timer2" style="margin-left: 1px;">Tot gesloten</span>
                         </div>
-                    </form>
 
-                    <form role="form">
-                        <div class="form-group" onkeypress="return event.keyCode != 13">
-                            <label for="gain">Gain Percent</label>
-                            <input type="number" class="form-control" id="gainPercent" placeholder="Gain Percent" data-toggle="tooltip" 
-                                title="Set the point gain percent users get when they win a bet." />
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left" data-toggle="modal" data-target="#settings"><i class="fa fa-cog"/></button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$.bet.open()">Open</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
-                    </form>
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$.bet.update()">Save</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
                 </div>
             </div>
+
+            <div id="betClose" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background: rgb(28, 28, 36); border-radius: 3px;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                            <h4 class="modal-title">Sluit een bieding</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <input type="text" class="form-control" id="betCloseI" placeholder="Winnende Optie" data-toggle="tooltip" title="Vul de winnende optie in. Dit zal de bieding volledig sluiten." />
+                            <br>
+                            <input type="checkbox" id="tempclose" data-toggle="tooltip" onclick="$.toggleInput()" title="Stop de inschrijving en wacht op de winnende optie."> Stop inschrijving
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$.bet.close()">Sluit</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settings" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background: rgb(28, 28, 36); border-radius: 3px;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"> </button>
+                            <h4 class="modal-title">Globale instellingen</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <table>
+                                <tr class="textList">
+                                    <td>Bewaar oude biedingen</td>
+                                    <td style="width: 25px">
+                                        <div id="toggleSaveBets" />
+                                    </td>
+                                    <td style="width: 25px">
+                                        <div data-toggle="tooltip" title="Toggle" class="button" onclick="$.toggleSaveBets();"><i class="fa fa-refresh" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="textList">
+                                    <td>Waarschuwings bericht</td>
+                                    <td style="width: 25px">
+                                        <div id="toggleWarningMessages" />
+                                    </td>
+                                    <td style="width: 25px">
+                                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleWarningMessages();"><i class="fa fa-refresh" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <br>
+                            <form role="form">
+                                <div class="form-group" onkeypress="return event.keyCode != 13">
+                                    <label for="dateFormt">Datum Format</label>
+                                    <input type="text" class="form-control" id="dateFormat" placeholder="Datum Format" data-toggle="tooltip" title="Stel het gewenste datum format in dit wordt gebruikt voor het opslaan van oude biedingen. standaard is yyyy.mm.dd" />
+                                </div>
+                            </form>
+
+                            <form role="form">
+                                <div class="form-group" onkeypress="return event.keyCode != 13">
+                                    <label for="gain">Winnings percentage</label>
+                                    <input type="number" class="form-control" id="gainPercent" placeholder="Winnings percentage" data-toggle="tooltip" title="Stel het percentage punten in dat wordt gewonnen wanneer een viewer het bod heeft gewonnen." />
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="$.bet.update()">Opslaan</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="betResults" />
         </div>
+    </div>
+
+    <h3>Roulette Configuratie</h3>
+    <div>
+        <div id="_roulettePanelDisabled" />
+        <div id="_roulettePanel">
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="rouletteTimeout">Roulette Timeout (seconden)</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.rouletteTimeout()">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="rouletteTimeoutInput" placeholder="Seconden">
+                </div>
+            </form>
         </div>
-        
-        <div id="betResults" />
-    </div>
     </div>
 
-    <h3>Roulette Configuration</h3>
+    <h3>Avontuur Configuratie</h3>
     <div>
-    <div id="_roulettePanelDisabled" />
-    <div id="_roulettePanel">
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="rouletteTimeout">Roulette Timeout (Seconds)</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.rouletteTimeout()">Submit</button>
-                <input type="number" min="0" class="form-control" id="rouletteTimeoutInput" placeholder="Seconds">
-            </div>
-        </form>
-    </div>
+        <div id="_adventurePanelDisabled" />
+        <div id="_adventurePanel">
+            <table>
+                <tr class="textList">
+                    <td>Per-user waarschuwings bericht</td>
+                    <td style="width: 25px">
+                        <div id="adventurewarningMessage" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan" class="button" onclick="$.adventureUpdateSetting('warningMessage', 'true');"><i class="fa fa-circle" />
+                        </div>
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="uit" class="button" onclick="$.adventureUpdateSetting('warningMessage', 'false');"><i class="fa fa-circle-o" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Per-user inschrijvings bericht</td>
+                    <td style="width: 25px">
+                        <div id="adventureenterMessage" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan" class="button" onclick="$.adventureUpdateSetting('enterMessage', 'true');"><i class="fa fa-circle" />
+                        </div>
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="uit" class="button" onclick="$.adventureUpdateSetting('enterMessage', 'false');"><i class="fa fa-circle-o" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="adventureStart">Begin een avontuur - Voorzie punten om te beginnen</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.adventureStart()">Start</button>
+                    <input type="number" min="0" class="form-control" id="adventureStartInput" placeholder="Punten om avontuur te beginnen">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="adventureJoinTime">Tijd om aan avontuur mee te doen (seconden)</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.adventureUpdateSetting('joinTime')">bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="adventurejoinTimeInput" placeholder="Seconden">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="adventureCooldown">Cooldown tijd tussen avonturen (seconden)</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.adventureUpdateSetting('coolDown')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="adventurecoolDownInput" placeholder="Seconden">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="adventureGainPct">Winnings percentage toegepast op het winnen van het avontuur</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.adventureUpdateSetting('gainPercent')">Bijwerken</button>
+                    <input type="number" min="1" class="form-control" id="adventuregainPercentInput" placeholder="Getal">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="adventureMinBet">Minimum bod om avontuur te beginnen</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.adventureUpdateSetting('minBet')">Bijwerken</button>
+                    <input type="number" min="1" class="form-control" id="adventureminBetInput" placeholder="Getal">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="adventureMaxBet">Maximum bod om avontuur te beginnen</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.adventureUpdateSetting('maxBet')">Bijwerken</button>
+                    <input type="number" min="1" class="form-control" id="adventuremaxBetInput" placeholder="Getal">
+                </div>
+            </form>
+        </div>
     </div>
 
-    <h3>Adventure Configuration</h3>
+    <h3>Slot Machine Configuratie</h3>
     <div>
-    <div id="_adventurePanelDisabled" />
-    <div id="_adventurePanel">
-        <table>
-            <tr class="textList">
-                <td>Per-user warning message</td>
-                <td style="width: 25px"><div id="adventurewarningMessage" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Enable" class="button"
-                         onclick="$.adventureUpdateSetting('warningMessage', 'true');"><i class="fa fa-circle" />
-                     </div>
-                </td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Disable" class="button"
-                         onclick="$.adventureUpdateSetting('warningMessage', 'false');"><i class="fa fa-circle-o" />
-                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td>Per-user entry message</td>
-                <td style="width: 25px"><div id="adventureenterMessage" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Enable" class="button"
-                         onclick="$.adventureUpdateSetting('enterMessage', 'true');"><i class="fa fa-circle" />
-                     </div>
-                </td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Disable" class="button"
-                         onclick="$.adventureUpdateSetting('enterMessage', 'false');"><i class="fa fa-circle-o" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+        <div id="_slotPanelDisabled" />
+        <div id="_slotPanel">
+            <div><strong>Slot beloningen</strong></div><br>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.setSlotRewards()">Bijwerken</button>
+                    <input style="width: 10%" type="number" min="0" id="slotRewards0Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor eerste waarde">
+                    <input style="width: 10%" type="number" min="0" id="slotRewards1Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor tweede waarde">
+                    <input style="width: 10%" type="number" min="0" id="slotRewards2Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor derde waarde">
+                    <input style="width: 10%" type="number" min="0" id="slotRewards3Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor vierde waarde">
+                    <input style="width: 10%" type="number" min="0" id="slotRewards4Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor vijfde waarde">
+                </div>
+            </form>
+            <div><strong>Slot Emotes</strong></div><br>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.setSlotEmotes()">Bijwerken</button>
+                    <input style="width: auto" type="text" id="slotEmotes0Input" placeholder="Emote" data-toggle="tooltip" title="Emote voor eerste waarde">
+                    <input style="width: auto" type="text" id="slotEmotes1Input" placeholder="Emote" data-toggle="tooltip" title="Emote voor tweede waarde">
+                    <input style="width: auto" type="text" id="slotEmotes2Input" placeholder="Emote" data-toggle="tooltip" title="Emote voor derde waarde">
+                    <input style="width: auto" type="text" id="slotEmotes3Input" placeholder="Emote" data-toggle="tooltip" title="Emote voor vierde waarde">
+                    <input style="width: auto" type="text" id="slotEmotes4Input" placeholder="Emote" data-toggle="tooltip" title="Emote voor vijfde waarde">
+                </div>
+            </form>
+        </div>
+    </div>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="adventureStart">Start an Adventure - Provide Points to Start</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.adventureStart()">Start</button>
-                <input type="number" min="0" class="form-control" id="adventureStartInput" placeholder="Points to Start Adventure">
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="adventureJoinTime">Time to Join an Adventure (Seconds)</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.adventureUpdateSetting('joinTime')">Submit</button>
-                <input type="number" min="0" class="form-control" id="adventurejoinTimeInput" placeholder="Seconds">
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="adventureCooldown">Cooldown Time Between Adventures (Seconds)</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.adventureUpdateSetting('coolDown')">Submit</button>
-                <input type="number" min="0" class="form-control" id="adventurecoolDownInput" placeholder="Seconds">
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="adventureGainPct">Gain Percent Applied to Winning an Adventure</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.adventureUpdateSetting('gainPercent')">Submit</button>
-                <input type="number" min="1" class="form-control" id="adventuregainPercentInput" placeholder="Number Value">
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="adventureMinBet">Minimum Bet to Start an Adventure</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.adventureUpdateSetting('minBet')">Submit</button>
-                <input type="number" min="1" class="form-control" id="adventureminBetInput" placeholder="Number Value">
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="adventureMaxBet">Maximum Bet to Start an Adventure</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.adventureUpdateSetting('maxBet')">Submit</button>
-                <input type="number" min="1" class="form-control" id="adventuremaxBetInput" placeholder="Number Value">
-            </div>
-        </form>
-    </div>    
-    </div>    
-
-    <h3>Slot Machine Configuration</h3>
+    <h3>Dice Roll Configuratie</h3>
     <div>
-    <div id="_slotPanelDisabled" />
-    <div id="_slotPanel">
-        <div><strong>Slot Rewards</strong></div><br>
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.setSlotRewards()">Submit</button>
-                <input style="width: 10%" type="number" min="0" id="slotRewards0Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for First Value">
-                <input style="width: 10%" type="number" min="0" id="slotRewards1Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Second Value">
-                <input style="width: 10%" type="number" min="0" id="slotRewards2Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Third Value">
-                <input style="width: 10%" type="number" min="0" id="slotRewards3Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Fourth Value">
-                <input style="width: 10%" type="number" min="0" id="slotRewards4Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Fifth Value">
-            </div>
-        </form>
-    <div><strong>Slot Emotes</strong></div><br>
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.setSlotEmotes()">Submit</button>
-                <input style="width: auto" type="text" id="slotEmotes0Input" placeholder="Emote"
-                       data-toggle="tooltip" title="Emote for First Value">
-                <input style="width: auto" type="text" id="slotEmotes1Input" placeholder="Emote"
-                       data-toggle="tooltip" title="Emote for Second Value">
-                <input style="width: auto" type="text" id="slotEmotes2Input" placeholder="Emote"
-                       data-toggle="tooltip" title="Emote for Third Value">
-                <input style="width: auto" type="text" id="slotEmotes3Input" placeholder="Emote"
-                       data-toggle="tooltip" title="Emote for Fourth Value">
-                <input style="width: auto" type="text" id="slotEmotes4Input" placeholder="Emote"
-                       data-toggle="tooltip" title="Emote for Fifth Value">
-            </div>
-        </form>
-    </div>
+        <div id="_rollPanelDisabled" />
+        <div id="_rollPanel">
+            <div><strong>Roll beloningen</strong></div><br>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.setRollRewards()">Bijwerken</button>
+                    <input style="width: 10%" type="number" min="0" id="rollRewards0Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor dubbel 1's">
+                    <input style="width: 10%" type="number" min="0" id="rollRewards1Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor dubbel 2's">
+                    <input style="width: 10%" type="number" min="0" id="rollRewards2Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor dubbel 3's">
+                    <input style="width: 10%" type="number" min="0" id="rollRewards3Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor dubbel 4's">
+                    <input style="width: 10%" type="number" min="0" id="rollRewards4Input" placeholder="Punten" data-toggle="tooltip" title="Punten voor dubbel 5's">
+                    <input style="width: 10%" type="number" min="0" id="rollRewards5Input" placeholder="Punten" data-toggle="tooltip" title="punten voor dubbel 6's">
+                </div>
+            </form>
+        </div>
     </div>
 
-    <h3>Dice Roll Configuration</h3>
+    <h3>Gokken Configuratie</h3>
     <div>
-    <div id="_rollPanelDisabled" />
-    <div id="_rollPanel">
-        <div><strong>Roll Rewards</strong></div><br>
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.setRollRewards()">Submit</button>
-                <input style="width: 10%" type="number" min="0" id="rollRewards0Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Double 1's">
-                <input style="width: 10%" type="number" min="0" id="rollRewards1Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Double 2's">
-                <input style="width: 10%" type="number" min="0" id="rollRewards2Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Double 3's">
-                <input style="width: 10%" type="number" min="0" id="rollRewards3Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Double 4's">
-                <input style="width: 10%" type="number" min="0" id="rollRewards4Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Double 5's">
-                <input style="width: 10%" type="number" min="0" id="rollRewards5Input" placeholder="Points"
-                       data-toggle="tooltip" title="Points for Double 6's">
-            </div>
-        </form>
+        <div id="_gamlbingPanelDisabled" />
+        <div id="_gamlbingPanel">
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gamblingMax2">Maximum Gok Bedrag</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('Max')">Bijwerken</button>
+                    <input type="number" min="1" class="form-control" id="gamblingMax" placeholder="Bedrag">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gamblingMin2">Minimum gok bedrag</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('Min')">Bijwerken</button>
+                    <input type="number" min="1" class="form-control" id="gamblingMin" placeholder="Bedrag">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gamblingWinPercent2">Winnend Percentage</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('WinPercent')">Bijwerken</button>
+                    <input type="number" min="1" class="form-control" id="gamblingWinPercent" placeholder="getal" data-toggle="tooltip" title="Het percentage punten de winnaar wint tijdens het gokken. Max is 100.">
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gamblingWinRange2">Winnend beriek</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('WinRange')">Bijwerken</button>
+                    <input type="number" min="1" class="form-control" id="gamblingWinRange" placeholder="getal" data-toggle="tooltip" title="Bereik vanaf waar mensen kunnen winnen, alles onder het number wat je hier invult betekend verliezen. Max is 100.">
+                </div>
+            </form>
+        </div>
     </div>
-    </div>
-
-    <h3>Gambling Configuration</h3>
-    <div>
-    <div id="_gamlbingPanelDisabled" />
-    <div id="_gamlbingPanel">
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gamblingMax2">Maximum Gambling Amount</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('Max')">Submit</button>
-                <input type="number" min="1" class="form-control" id="gamblingMax" placeholder="Amount">
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gamblingMin2">Minimum Gambling Amount</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('Min')">Submit</button>
-                <input type="number" min="1" class="form-control" id="gamblingMin" placeholder="Amount">
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gamblingWinPercent2">Winning Percent</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('WinPercent')">Submit</button>
-                <input type="number" min="1" class="form-control" id="gamblingWinPercent" placeholder="Amount" data-toggle="tooltip" 
-                        title="The percent of points the winner wins when gambling. Max is 100." >
-            </div>
-        </form>
-
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gamblingWinRange2">Winning Range</label>
-                <button type="button" class="btn btn-primary inline pull-right" onclick="$.gambling('WinRange')">Submit</button>
-                <input type="number" min="1" class="form-control" id="gamblingWinRange" placeholder="Amount" data-toggle="tooltip" 
-                        title="Range from where people can win, anything under the number you put here will be a lost. Max is 100." >
-            </div>
-        </form>
-    </div>
-</div>
 </div>
 
 <!-- Run the Acordion -->
-<script>$("#gamesAccordion").accordion( { clearStyle: true, heightStyle: "panel", icons: null } );</script>
-<script>handleInputFocus();</script>
-<script>$('[data-toggle="tooltip"]').tooltip({ trigger: 'hover' });</script>
-<script>function rangeUpdate(value, id, string) { document.getElementById(id).innerHTML = value + ' ' + string; }</script>
+<script>
+    $("#gamesAccordion").accordion({
+        clearStyle: true,
+        heightStyle: "panel",
+        icons: null
+    });
+</script>
+<script>
+    handleInputFocus();
+</script>
+<script>
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'hover'
+    });
+</script>
+<script>
+    function rangeUpdate(value, id, string) {
+        document.getElementById(id).innerHTML = value + ' ' + string;
+    }
+</script>

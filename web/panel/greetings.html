@@ -22,479 +22,463 @@
 
 <!-- Accordion object.  Each section is separated by an <h3 /> header and the content is to be enclosed in <div />.  -->
 <div id="greetingsAccordion">
-    <h3>Greeting Settings</h3>
+    <h3>Begroetings instellingen</h3>
     <div>
-    <div id="_globalGreetingsPanelDisabled" />
-    <div id="_globalGreetingsPanel">
-        <table>
-            <tr class="textList">
-                <td>Toggle Global Greetings</td>
-                <td style="width: 25px"><div id="globalGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('greeting', 'autoGreetEnabled');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+        <div id="_globalGreetingsPanelDisabled" />
+        <div id="_globalGreetingsPanel">
+            <table>
+                <tr class="textList">
+                    <td>zet Globale Begroeting aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="globalGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('greeting', 'autoGreetEnabled');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="greetingCooldown">Greeting Cooldown (hours)</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('greetingCooldownInput', 'cooldown')">Submit</button>
-                <input type="number" min="0" class="form-control" id="greetingCooldownInput" placeholder="hours" />
-            </div>
-        </form>
-        <i>Users have to set their own message to be greeted when joining the channel.</i>
-    </div>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="greetingCooldown">Groeten Cooldown (uren)</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('greetingCooldownInput', 'cooldown')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="greetingCooldownInput" placeholder="Uren" />
+                </div>
+            </form>
+            <i>Kijkers moeten hun eigen bericht instellen om begroet te worden wanneer ze de chat joinen.</i>
+        </div>
     </div>
 
-    <h3>Follow Alert Settings</h3>
+    <h3>Volg notificatie instellingen</h3>
     <div>
-    <div id="_followAlertsPanelDisabled" />
-    <div id="_followAlertsPanel"> 
-        <table>
-            <tr class="textList">
-                <td>Toggle Follower Alerts</td>
-                <td style="width: 25px"><div id="followerGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('settings', 'followToggle');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+        <div id="_followAlertsPanelDisabled" />
+        <div id="_followAlertsPanel">
+            <table>
+                <tr class="textList">
+                    <td>Zet Volg notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="followerGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('settings', 'followToggle');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="followerGreeting">Message</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('followerGreetingInput', 'settings', 'followMessage')">Submit</button>
-                <input type="text" class="form-control" id="followerGreetingInput" placeholder="Greeting Message"
-                       data-toggle="tooltip" title="Tags: (name) (reward)"/>
-            </div>
-        </form>
-        
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="followerReward">Reward</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('followerRewardInput', 'settings', 'followReward')">Submit</button>
-                <input type="number" min="0" class="form-control" id="followerRewardInput" placeholder="Points" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="followerGreeting">Bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('followerGreetingInput', 'settings', 'followMessage')">Bijwerken</button>
+                    <input type="text" class="form-control" id="followerGreetingInput" placeholder="begroetings bericht" data-toggle="tooltip" title="Tags: (name) (reward)" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="followDelay">Delay (seconds)</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('followDelay', 'settings', 'followDelay')">Submit</button>
-                <input type="number" min="0" class="form-control" id="followDelay" placeholder="Delay in seconds" />
-            </div>
-        </form>
-    </div>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="followerReward">Beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('followerRewardInput', 'settings', 'followReward')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="followerRewardInput" placeholder="Punten" />
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="followDelay">Vertraging (seconden)</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('followDelay', 'settings', 'followDelay')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="followDelay" placeholder="Vertraging in seconden" />
+                </div>
+            </form>
+        </div>
     </div>
 
-    <h3>StreamLabs Settings</h3>
+    <h3>StreamLabs instellingen</h3>
     <div>
-    <div id="_donationAlertsPanelDisabled" />
-    <div id="_donationAlertsPanel">
-        <table>
-            <tr class="textList">
-                <td>Toggle Donation Alerts</td>
-                <td style="width: 25px"><div id="donationGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('donations', 'announce');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
+        <div id="_donationAlertsPanelDisabled" />
+        <div id="_donationAlertsPanel">
+            <table>
+                <tr class="textList">
+                    <td>Zet donatie notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="donationGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('donations', 'announce');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
 
-            <tr class="textList">
-                <td>Toggle Donator Promotion</td>
-                <td style="width: 25px"><div id="donationGroup" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('donationGroup', 'donationGroup');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+                <tr class="textList">
+                    <td>Zet doneerder promoties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="donationGroup" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('donationGroup', 'donationGroup');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="donateReward">Multiplier Reward</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('donateRewardInput', 'donations', 'reward')">Submit</button>
-                <input data-toggle="tooltip" title="Point(s) per single unit of currency donated. Partial numbers (0.1) are allowed."
-                       type="number" min="0" step="0.1" class="form-control" id="donateRewardInput" placeholder="Points" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="donateReward">Multiplier Beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('donateRewardInput', 'donations', 'reward')">Bijwerken</button>
+                    <input data-toggle="tooltip" title="Punten per donatie. Decimalen getallen zijn toegestaan (0.1)." type="number" min="0" step="0.1" class="form-control" id="donateRewardInput" placeholder="Punten" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="donationGroupMin">Promote Amount</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('donationGroupMin', 'donations', 'donationGroupMin')">Submit</button>
-                <input type="text" class="form-control" id="donationGroupMin" placeholder="Amount" 
-                       data-toggle="tooltip" title="Tags: Minimum amount someone needs to donate in total"/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="donationGroupMin">Promotie hoeveelheid</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('donationGroupMin', 'donations', 'donationGroupMin')">Bijwerken</button>
+                    <input type="text" class="form-control" id="donationGroupMin" placeholder="getal" data-toggle="tooltip" title="Tags: Minimum hoeveelheid iemand moet doneren" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="donateGreeting">Message</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('donateGreetingInput', 'donations', 'message')">Submit</button>
-                <input type="text" class="form-control" id="donateGreetingInput" placeholder="Donation Message" 
-                       data-toggle="tooltip" title="Tags: (name) (amount) (points) (pointname) (message) (currency)"/>
-            </div>
-        </form>
-    </div>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="donateGreeting">Bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('donateGreetingInput', 'donations', 'message')">Bijwerken</button>
+                    <input type="text" class="form-control" id="donateGreetingInput" placeholder="Donatie Bericht" data-toggle="tooltip" title="Tags: (name) (amount) (points) (pointname) (message) (currency)" />
+                </div>
+            </form>
+        </div>
     </div>
 
-    <h3>StreamTip Settings</h3>
+    <h3>StreamTip Instellingen</h3>
     <div>
-    <div id="_streamtipdonationAlertsPanelDisabled" />
-    <div id="_streamtipdonationAlertsPanel">
-        <table>
-            <tr class="textList">
-                <td>Toggle Donation Alerts</td>
-                <td style="width: 25px"><div id="streamtipGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('streamtip', 'announce');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
+        <div id="_streamtipdonationAlertsPanelDisabled" />
+        <div id="_streamtipdonationAlertsPanel">
+            <table>
+                <tr class="textList">
+                    <td>Zet donatie notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="streamtipGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('streamtip', 'announce');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
 
-            <tr class="textList">
-                <td>Toggle Donator Promotion</td>
-                <td style="width: 25px"><div id="streamtipdonationGroup" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('streamtipdonationGroup', 'donationGroup');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+                <tr class="textList">
+                    <td>Zet Doneerder promoties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="streamtipdonationGroup" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('streamtipdonationGroup', 'donationGroup');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="streamtipdonateReward">Multiplier Reward</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('streamtipdonateRewardInput', 'streamtip', 'reward')">Submit</button>
-                <input data-toggle="tooltip" title="Point(s) per single unit of currency donated. Partial numbers (0.1) are allowed."
-                       type="number" min="0" step="0.1" class="form-control" id="streamtipdonateRewardInput" placeholder="Points" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="streamtipdonateReward">Multiplier Beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('streamtipdonateRewardInput', 'streamtip', 'reward')">Bijwerken</button>
+                    <input data-toggle="tooltip" title="Punten per donatie. Decimalen getallen zijn toegestaan (0.1)." type="number" min="0" step="0.1" class="form-control" id="streamtipdonateRewardInput" placeholder="Punten" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="streamtipdonationGroupMin">Promote Amount</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('streamtipdonationGroupMin', 'streamtip', 'donationGroupMin')">Submit</button>
-                <input type="text" class="form-control" id="streamtipdonationGroupMin" placeholder="Amount" 
-                       data-toggle="tooltip" title="Tags: Minimum amount someone needs to donate in total"/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="streamtipdonationGroupMin">Promotie hoeveelheid</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('streamtipdonationGroupMin', 'streamtip', 'donationGroupMin')">Bijwerken</button>
+                    <input type="text" class="form-control" id="streamtipdonationGroupMin" placeholder="getal" data-toggle="tooltip" title="Tags: Minimum hoeveelheid iemand moet doneren" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="streamtipdonateGreeting">Message</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('streamtipdonateGreetingInput', 'streamtip', 'message')">Submit</button>
-                <input type="text" class="form-control" id="streamtipdonateGreetingInput" placeholder="Donation Message" 
-                       data-toggle="tooltip" title="Tags: (name) (amount) (points) (pointname) (message) (currency)"/>
-            </div>
-        </form>
-    </div>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="streamtipdonateGreeting">Bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('streamtipdonateGreetingInput', 'streamtip', 'message')">Bijwerken</button>
+                    <input type="text" class="form-control" id="streamtipdonateGreetingInput" placeholder="Donatie bericht" data-toggle="tooltip" title="Tags: (name) (amount) (points) (pointname) (message) (currency)" />
+                </div>
+            </form>
+        </div>
     </div>
 
-    <h3>TipeeeStream Settings</h3>
+    <h3>TipeeeStream instellingen</h3>
     <div>
-    <div id="_tipeeeStreamDonationsPanelDisabled" />
-    <div id="_tipeeeStreamDonationsPanel">
-        <table>
-            <tr class="textList">
-                <td>Toggle Donation Alerts</td>
-                <td style="width: 25px"><div id="tipeeestreamGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('tipeeestream', 'toggle');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
+        <div id="_tipeeeStreamDonationsPanelDisabled" />
+        <div id="_tipeeeStreamDonationsPanel">
+            <table>
+                <tr class="textList">
+                    <td>Zet donatie notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="tipeeestreamGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('tipeeestream', 'toggle');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
 
-            <tr class="textList">
-                <td>Toggle Donator Promotion</td>
-                <td style="width: 25px"><div id="tipeeestreamdonationGroup" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('tipeeestreamdonationGroup', 'group');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+                <tr class="textList">
+                    <td>Zet Doneerder promoties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="tipeeestreamdonationGroup" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('tipeeestreamdonationGroup', 'group');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="tipeeestreamdonateRewardInput">Multiplier Reward</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('tipeeestreamdonateRewardInput', 'tipeeeStreamHandler', 'reward')">Submit</button>
-                <input data-toggle="tooltip" title="Point(s) per single unit of currency donated. Partial numbers (0.1) are allowed."
-                       type="number" min="0" step="0.1" class="form-control" id="tipeeestreamdonateRewardInput" placeholder="Points" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="tipeeestreamdonateRewardInput">Multiplier Beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('tipeeestreamdonateRewardInput', 'tipeeeStreamHandler', 'reward')">Bijwerken</button>
+                    <input data-toggle="tooltip" title="Punten per donatie. Decimalen getallen zijn toegestaan (0.1)." type="number" min="0" step="0.1" class="form-control" id="tipeeestreamdonateRewardInput" placeholder="Points" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="tipeeestreamdonationGroupMin">Promote Amount</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('tipeeestreamdonationGroupMin', 'tipeeeStreamHandler', 'groupMin')">Submit</button>
-                <input type="text" class="form-control" id="tipeeestreamdonationGroupMin" placeholder="Amount" 
-                       data-toggle="tooltip" title="Tags: Minimum amount someone needs to donate in total"/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="tipeeestreamdonationGroupMin">Promotie hoeveelheid</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('tipeeestreamdonationGroupMin', 'tipeeeStreamHandler', 'groupMin')">Bijwerken</button>
+                    <input type="text" class="form-control" id="tipeeestreamdonationGroupMin" placeholder="Amount" data-toggle="tooltip" title="Tags: Minimum hoeveelheid iemand moet doneren" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="tipeeestreamdonateGreeting">Message</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('tipeeestreamdonateGreetingInput', 'tipeeeStreamHandler', 'message')">Submit</button>
-                <input type="text" class="form-control" id="tipeeestreamdonateGreetingInput" placeholder="Donation Message" 
-                       data-toggle="tooltip" title="Tags: (name) (amount) (reward) (message) (currency) (formattedamount)"/>
-            </div>
-        </form>
-    </div>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="tipeeestreamdonateGreeting">Bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('tipeeestreamdonateGreetingInput', 'tipeeeStreamHandler', 'message')">Bijwerken</button>
+                    <input type="text" class="form-control" id="tipeeestreamdonateGreetingInput" placeholder="Donatie bericht" data-toggle="tooltip" title="Tags: (name) (amount) (reward) (message) (currency) (formattedamount)" />
+                </div>
+            </form>
+        </div>
     </div>
 
-    <h3>Subscriber Alert Settings</h3>
+    <h3>Subscriber notificaties instellingen</h3>
     <div>
-    <div id="_twitchSubPanelDisabled" />
-    <div id="_twitchSubPanel">
-        <table>
-            <tr class="textList">
-                <td>Toggle Subscription Alerts</td>
-                <td style="width: 25px"><div id="subscriptionGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('subscribeHandler', 'subscriberWelcomeToggle');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-            <tr class="textList">
-                <td>Toggle Prime Subscription Alerts</td>
-                <td style="width: 25px"><div id="primeSubscriptionGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('subscribeHandler', 'primeSubscriberWelcomeToggle');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-            <tr class="textList">
-                <td>Toggle Resubscription Alerts</td>
-                <td style="width: 25px"><div id="resubscriptionGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('subscribeHandler', 'reSubscriberWelcomeToggle');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
-        
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="subReward">Subscribing Reward</label>
-                    <button type="button" class="btn btn-primary inline pull-right" 
-                          onclick="$.updateGreetingData('subRewardInput', 'subscribeHandler', 'subscribeReward')">Submit</button>
-                    <input type="number" min="0" class="form-control" id="subRewardInput" placeholder="Points" />
-              </div>
-        </form>
-      
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="reSubReward">Resubscribing Reward</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('reSubRewardInput', 'subscribeHandler', 'reSubscribeReward')">Submit</button>
-                <input type="number" min="0" class="form-control" id="reSubRewardInput" placeholder="Points" />
-            </div>
-        </form>
+        <div id="_twitchSubPanelDisabled" />
+        <div id="_twitchSubPanel">
+            <table>
+                <tr class="textList">
+                    <td>Zet Subscription notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="subscriptionGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('subscribeHandler', 'subscriberWelcomeToggle');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+                <tr class="textList">
+                    <td>Zet Prime Subscription notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="primeSubscriptionGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('subscribeHandler', 'primeSubscriberWelcomeToggle');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+                <tr class="textList">
+                    <td>Zet Resubscription notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="resubscriptionGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('subscribeHandler', 'reSubscriberWelcomeToggle');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="subGreeting">Subscriber Message</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('subGreetingInput', 'subscribeHandler', 'subscribeMessage')">Submit</button>
-                <input type="text" class="form-control" id="subGreetingInput" placeholder="Greeting Message" 
-                       data-toggle="tooltip" title="Tags: (name) (reward)"/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="subReward">Subscribing beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('subRewardInput', 'subscribeHandler', 'subscribeReward')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="subRewardInput" placeholder="Punten" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="primeSubGreeting">Prime Subscriber Message</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('primeSubGreetingInput', 'subscribeHandler', 'primeSubscribeMessage')">Submit</button>
-                <input type="text" class="form-control" id="primeSubGreetingInput" placeholder="Greeting Message" 
-                       data-toggle="tooltip" title="Tags: (name) (reward)"/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="reSubReward">Resubscribing beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('reSubRewardInput', 'subscribeHandler', 'reSubscribeReward')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="reSubRewardInput" placeholder="Punten" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="resubGreeting">Resubscriber Message</label>
-                <button type="button" class="btn btn-primary inline pull-right"  
-                        onclick="$.updateGreetingData('resubGreetingInput', 'subscribeHandler', 'reSubscribeMessage')">Submit</button>
-                <input type="text" class="form-control" id="resubGreetingInput" placeholder="Greeting Message"
-                       data-toggle="tooltip" title="Tags: (name) (reward) (months) (customemote)" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="subGreeting">Subscriber bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('subGreetingInput', 'subscribeHandler', 'subscribeMessage')">Bijwerken</button>
+                    <input type="text" class="form-control" id="subGreetingInput" placeholder="begroetings bericht" data-toggle="tooltip" title="Tags: (name) (reward)" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="resubEmote">Resubscriber Custom Emote</label>
-                <button type="button" class="btn btn-primary inline pull-right"  
-                        onclick="$.updateGreetingData('resubEmoteInput', 'subscribeHandler', 'resubEmote')">Submit</button>
-                <input type="text" class="form-control" id="resubEmoteInput" placeholder="Emote name"
-                       data-toggle="tooltip" title="Emote that the (customemote) that will be replaced with. The emote will be added the amount of months the user subscribed for." />
-            </div>
-        </form>
-    </div>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="primeSubGreeting">Prime Subscriber bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('primeSubGreetingInput', 'subscribeHandler', 'primeSubscribeMessage')">Bijwerken</button>
+                    <input type="text" class="form-control" id="primeSubGreetingInput" placeholder="begroetings bericht" data-toggle="tooltip" title="Tags: (name) (reward)" />
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="resubGreeting">Resubscriber Bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('resubGreetingInput', 'subscribeHandler', 'reSubscribeMessage')">Bijwerken</button>
+                    <input type="text" class="form-control" id="resubGreetingInput" placeholder="begroetings bericht" data-toggle="tooltip" title="Tags: (name) (reward) (months) (customemote)" />
+                </div>
+            </form>
+
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="resubEmote">Resubscriber Custom Emote</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('resubEmoteInput', 'subscribeHandler', 'resubEmote')">Bijwerken</button>
+                    <input type="text" class="form-control" id="resubEmoteInput" placeholder="Emote naam" data-toggle="tooltip" title="Emote that the (customemote) that will be replaced with. The emote will be added the amount of months the user subscribed for." />
+                </div>
+            </form>
+        </div>
     </div>
 
-    <h3>Bits Alert Settings</h3>
+    <h3>Bits notificatie instellingen</h3>
     <div>
-    <div id="_twitchBitsAlertsPanelDisabled" />
-    <div id="_twitchBitsPanel">
-        <table>
-            <tr class="textList">
-                <td>Toggle Bits Alerts</td>
-                <td style="width: 25px"><div id="bitsToggle" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('bitsSettings', 'toggle');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+        <div id="_twitchBitsAlertsPanelDisabled" />
+        <div id="_twitchBitsPanel">
+            <table>
+                <tr class="textList">
+                    <td>Zet Bits notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="bitsToggle" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('bitsSettings', 'toggle');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="bitsMessage">Message</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('bitsMessage', 'bitsSettings', 'message')">Submit</button>
-                <input type="text" class="form-control" id="bitsMessage" placeholder="Message" 
-                       data-toggle="tooltip" title="Tags: (name) (reward) (amount)"/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="bitsMessage">Bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('bitsMessage', 'bitsSettings', 'message')">Bijwerken</button>
+                    <input type="text" class="form-control" id="bitsMessage" placeholder="Bericht" data-toggle="tooltip" title="Tags: (name) (reward) (amount)" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="bitsMinimum">Minimum</label>
-                <button type="button" class="btn btn-primary inline pull-right"  
-                        onclick="$.updateGreetingData('bitsMinimum', 'bitsSettings', 'minimum')">Submit</button>
-                <input type="number" min="0" class="form-control" id="bitsMinimum" placeholder="Amount" data-toggle="tooltip" title="Set the minimum amount of bits a user needs to cheer before triggering the alert."/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="bitsMinimum">Minimum</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('bitsMinimum', 'bitsSettings', 'minimum')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="bitsMinimum" placeholder="hoeveelheid" data-toggle="tooltip" title="Stel de minimum hoeveelheid bits in die een gebruiker moet cheeren om de notificatie te triggeren." />
+                </div>
+            </form>
 
-    </div>
+        </div>
     </div>
 
 
-    <h3>GameWisp Alert Settings</h3>
+    <h3>GameWisp notificatie instellingen</h3>
     <div>
-    <div id="_gwSubPanelDisabled" />
-    <div id="_gwSubPanel">
-        <table>
-            <tr class="textList">
-                <td>Toggle Subscription Alert</td>
-                <td style="width: 25px"><div id="gameWispGreetings" /></td>
-                <td style="width: 25px">
-                    <div data-toggle="tooltip" title="Toggle" class="button"
-                         onclick="$.toggleGreetings('gameWispSubHandler', 'showSubscribeMessage');"><i class="fa fa-refresh" />
-                     </div>
-                </td>
-            </tr>
-        </table>
-        <br>
+        <div id="_gwSubPanelDisabled" />
+        <div id="_gwSubPanel">
+            <table>
+                <tr class="textList">
+                    <td>Zet Subscription notificaties aan/uit</td>
+                    <td style="width: 25px">
+                        <div id="gameWispGreetings" />
+                    </td>
+                    <td style="width: 25px">
+                        <div data-toggle="tooltip" title="aan/uit" class="button" onclick="$.toggleGreetings('gameWispSubHandler', 'showSubscribeMessage');"><i class="fa fa-refresh" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gwSubGreeting">Subscriber Message</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('gwSubGreetingInput', 'gameWispSubHandler', 'subscribeMessage')">Submit</button>
-                <input type="text" class="form-control" id="gwSubGreetingInput" placeholder="Greeting Message" 
-                       data-toggle="tooltip" title="Tags: (name) (tier) (reward)"/>
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gwSubGreeting">Subscriber Bericht</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('gwSubGreetingInput', 'gameWispSubHandler', 'subscribeMessage')">Bijwerken</button>
+                    <input type="text" class="form-control" id="gwSubGreetingInput" placeholder="begroetings bericht" data-toggle="tooltip" title="Tags: (name) (tier) (reward)" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gwResubGreeting">Resubscriber Message</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('gwResubGreetingInput', 'gameWispSubHandler', 'reSubscribeMessage')">Submit</button>
-                <input type="text" class="form-control" id="gwResubGreetingInput" placeholder="Greeting Message"
-                       data-toggle="tooltip" title="Tags: (name) (tier) (reward) (months)" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gwResubGreeting">Resubscriber Message</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('gwResubGreetingInput', 'gameWispSubHandler', 'reSubscribeMessage')">Bijwerken</button>
+                    <input type="text" class="form-control" id="gwResubGreetingInput" placeholder="Begroetings bericht" data-toggle="tooltip" title="Tags: (name) (tier) (reward) (months)" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gwTierupGreeting">Tier Up Announcement</label>
-                <button type="button" class="btn btn-primary inline pull-right" 
-                        onclick="$.updateGreetingData('gwTierupGreetingInput', 'gameWispSubHandler', 'tierUpMessage')">Submit</button>
-                <input type="text" class="form-control" id="gwTierupGreetingInput" placeholder="Greeting Message"
-                       data-toggle="tooltip" title="Tags: (name) (tier)" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gwTierupGreeting">Tier Up aankondeging</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('gwTierupGreetingInput', 'gameWispSubHandler', 'tierUpMessage')">Bijwerken</button>
+                    <input type="text" class="form-control" id="gwTierupGreetingInput" placeholder="Begroetings bericht" data-toggle="tooltip" title="Tags: (name) (tier)" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gwSubReward">Subscription Reward</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('gwSubRewardInput', 'gameWispSubHandler', 'subscribeReward')">Submit</button>
-                <input type="number" min="0" class="form-control" id="gwSubRewardInput" placeholder="Points" />
-            </div>
-        </form>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gwSubReward">Subscription beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('gwSubRewardInput', 'gameWispSubHandler', 'subscribeReward')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="gwSubRewardInput" placeholder="punten" />
+                </div>
+            </form>
 
-        <form role="form">
-            <div class="form-group" onkeypress="return event.keyCode != 13">
-                <label for="gwResubReward">Resubscription Reward</label>
-                <button type="button" class="btn btn-primary inline pull-right"
-                        onclick="$.updateGreetingData('gwResubRewardInput', 'gameWispSubHandler', 'reSubscribeReward')">Submit</button>
-                <input type="number" min="0" class="form-control" id="gwResubRewardInput" placeholder="Points" />
-            </div>
-        </form>
-    </div>
+            <form role="form">
+                <div class="form-group" onkeypress="return event.keyCode != 13">
+                    <label for="gwResubReward">Resubscription beloning</label>
+                    <button type="button" class="btn btn-primary inline pull-right" onclick="$.updateGreetingData('gwResubRewardInput', 'gameWispSubHandler', 'reSubscribeReward')">Bijwerken</button>
+                    <input type="number" min="0" class="form-control" id="gwResubRewardInput" placeholder="punten" />
+                </div>
+            </form>
+        </div>
     </div>
 
     <h3>GameWisp Tier Perks</h3>
     <div>
-    <div id="_gwTierPanelDisabled" />
-    <div id="_gwTierPanel">
-        <table style="background: transparent">
-            <tr>
-                <td> <strong>Song Request Perks</strong> <div id="gameWispSongRequests" style="height: 200px; overflow: auto;" /> </td>
-                <td> <strong>Subscription Bonus Points Perks</strong> <div id="gameWispBonusPoints" style="height: 200px; overflow: auto;" /> </td>
-            </tr>
-            <tr>
-                <td> <strong>Resubscription Bonus Points Perks</strong> <div id="gameWispSubBonusPoints" style="height: 200px; overflow: auto;" /> </td>
-            </tr>
-        </table>
-    </div>
+        <div id="_gwTierPanelDisabled" />
+        <div id="_gwTierPanel">
+            <table style="background: transparent">
+                <tr>
+                    <td> <strong>Song Request Perks</strong>
+                        <div id="gameWispSongRequests" style="height: 200px; overflow: auto;" /> </td>
+                    <td> <strong>Subscription Bonus punten Perks</strong>
+                        <div id="gameWispBonusPoints" style="height: 200px; overflow: auto;" /> </td>
+                </tr>
+                <tr>
+                    <td> <strong>Resubscription Bonus punten Perks</strong>
+                        <div id="gameWispSubBonusPoints" style="height: 200px; overflow: auto;" /> </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 
 <!-- Run the Acordion -->
-<script>$("#greetingsAccordion").accordion( { clearStyle: true, heightStyle: "panel", icons: null } );</script>
-<script>$('[data-toggle="tooltip"]').tooltip({ trigger: 'hover' });</script>
-<script>handleInputFocus();</script>
+<script>
+    $("#greetingsAccordion").accordion({
+        clearStyle: true,
+        heightStyle: "panel",
+        icons: null
+    });
+</script>
+<script>
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'hover'
+    });
+</script>
+<script>
+    handleInputFocus();
+</script>
